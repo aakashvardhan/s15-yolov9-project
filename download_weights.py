@@ -2,7 +2,7 @@ import os
 import requests
 
 # Define the home directory and weights directory
-home_dir = os.path.expanduser("/content")
+home_dir = os.path.expanduser("/home/ubuntu/s15-yolov9-project")
 weights_dir = os.path.join(home_dir, "weights")
 
 # Create the weights directory if it doesn't exist
