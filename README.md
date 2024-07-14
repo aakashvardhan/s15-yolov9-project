@@ -383,4 +383,10 @@ python yolov9/detect_dual.py --source yolov9/data/sketch_images/valid/images/1EA
 
 Image Result:
 
-!
+![image](https://github.com/aakashvardhan/s15-yolov9-project/blob/main/asset/output.png)
+
+The output image shows the bounding boxes around the GUI Elements. The bounding boxes are color-coded based on the class of the object. The class labels and confidence scores are also displayed on the image.
+
+## Conclusion
+
+The YOLOv9 model was trained on the GUI dataset, and the model was able to detect the GUI elements with high accuracy. The model was trained for 50 epochs, and the best model was selected based on the validation loss. The model was able to achieve an mAP of 0.942 on the validation set. The model was then used to perform inference on a sample image, and the model was able to detect the GUI elements in the image with high accuracy.
