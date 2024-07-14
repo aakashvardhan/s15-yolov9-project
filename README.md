@@ -1,15 +1,62 @@
 
+# Training Sketch GUI Images using YOLOv9
+
+## Introduction
+
+This project is about training a YOLOv9 model to detect objects in sketch images. The dataset used for training is a custom dataset from RoboFlow. The dataset contains images of GUI sketches and the corresponding labels. The labels are in the YOLO format. The dataset is divided into training and validation sets. The training set contains 934 images and the validation set contains 152 images. The dataset is available in the `yolov9/data/sketch_images` directory.
+
+## YOLOv9
+
+YOLOv9
+
+YOLOv9 is the latest iteration in the YOLO (You Only Look Once) series, designed for real-time object detection. Released on February 21, 2024, YOLOv9 introduces several groundbreaking innovations to enhance efficiency, accuracy, and adaptability in computer vision tasks.
+
+### Key Features
+
+#### Programmable Gradient Information (PGI)
+PGI addresses the information bottleneck problem by preserving essential data across network layers. This ensures accurate gradient updates and enhances the model's learning efficiency.
+
+#### Generalized Efficient Layer Aggregation Network (GELAN)
+GELAN optimizes parameter utilization and computational efficiency, making YOLOv9 suitable for both lightweight and large-scale models. This architecture improves the model's ability to retain information and perform accurate predictions.
+
+#### Reversible Functions
+Reversible functions help mitigate information loss by allowing operations to reverse their inputs back to their original form. This approach ensures that crucial data is not lost during transformations within the network.
+
+### Supported Tasks and Modes
+
+YOLOv9 supports various tasks, including:
+- **Object Detection**
+- **Instance Segmentation**
+
+The model is compatible with multiple operational modes such as:
+- **Inference**
+- **Validation**
+- **Training**
+- **Export**
+
+### Model Variants
+
+YOLOv9 comes in four main variants, each optimized for different computational needs and accuracy requirements:
+- **YOLOv9-S** : Small model with fewer parameters and faster inference speed.
+- **YOLOv9-M** : Medium-sized model with a balance between speed and accuracy.
+- **YOLOv9-C** : Large model with higher accuracy and more parameters.
+- **YOLOv9-E** : Extra-large model with the highest accuracy and computational cost.
+
+### Performance
+
+YOLOv9 outperforms previous YOLO models and other state-of-the-art object detectors on the MS COCO dataset. It achieves higher mean Average Precision (mAP) while using fewer parameters and computational resources.
+
+## Training Result
+
+
 
 
 ```
 
-[34m[1mtrain_dual: [0mweights=/home/ubuntu/s15-yolov9-project/weights/yolov9-e.pt, cfg=/home/ubuntu/s15-yolov9-project/weights/yolov9-e.yaml, data=/home/ubuntu/s15-yolov9-project/yolov9/data/sketch_images/data.yaml, hyp=/home/ubuntu/s15-yolov9-project/yolov9/data/hyps/hyp.scratch-high.yaml, epochs=50, batch_size=8, imgsz=640, rect=False, resume=False, nosave=False, noval=False, noautoanchor=False, noplots=False, evolve=None, bucket=, cache=None, image_weights=False, device=0, multi_scale=False, single_cls=False, optimizer=SGD, sync_bn=False, workers=8, project=yolov9/runs/train, name=exp, exist_ok=False, quad=False, cos_lr=False, flat_cos_lr=False, fixed_lr=False, label_smoothing=0.0, patience=100, freeze=[0], save_period=-1, seed=0, local_rank=-1, min_items=0, close_mosaic=0, entity=None, upload_dataset=False, bbox_interval=-1, artifact_alias=latest
+train_dual: weights=/home/ubuntu/s15-yolov9-project/weights/yolov9-e.pt, cfg=/home/ubuntu/s15-yolov9-project/weights/yolov9-e.yaml, data=/home/ubuntu/s15-yolov9-project/yolov9/data/sketch_images/data.yaml, hyp=/home/ubuntu/s15-yolov9-project/yolov9/data/hyps/hyp.scratch-high.yaml, epochs=50, batch_size=8, imgsz=640, rect=False, resume=False, nosave=False, noval=False, noautoanchor=False, noplots=False, evolve=None, bucket=, cache=None, image_weights=False, device=0, multi_scale=False, single_cls=False, optimizer=SGD, sync_bn=False, workers=8, project=yolov9/runs/train, name=exp, exist_ok=False, quad=False, cos_lr=False, flat_cos_lr=False, fixed_lr=False, label_smoothing=0.0, patience=100, freeze=[0], save_period=-1, seed=0, local_rank=-1, min_items=0, close_mosaic=0, entity=None, upload_dataset=False, bbox_interval=-1, artifact_alias=latest
 YOLO 🚀 v0.1-104-g5b1ea9a Python-3.11.9 torch-2.3.0 CUDA:0 (Tesla T4, 14931MiB)
 
-[34m[1mhyperparameters: [0mlr0=0.01, lrf=0.01, momentum=0.937, weight_decay=0.0005, warmup_epochs=3.0, warmup_momentum=0.8, warmup_bias_lr=0.1, box=7.5, cls=0.5, cls_pw=1.0, obj=0.7, obj_pw=1.0, dfl=1.5, iou_t=0.2, anchor_t=5.0, fl_gamma=0.0, hsv_h=0.015, hsv_s=0.7, hsv_v=0.4, degrees=0.0, translate=0.1, scale=0.9, shear=0.0, perspective=0.0, flipud=0.0, fliplr=0.5, mosaic=1.0, mixup=0.15, copy_paste=0.3
-[34m[1mClearML: [0mrun 'pip install clearml' to automatically track, visualize and remotely train YOLO 🚀 in ClearML
-[34m[1mComet: [0mrun 'pip install comet_ml' to automatically track and visualize YOLO 🚀 runs in Comet
-[34m[1mTensorBoard: [0mStart with 'tensorboard --logdir yolov9/runs/train', view at http://localhost:6006/
+34m hyperparameters: lr0=0.01, lrf=0.01, momentum=0.937, weight_decay=0.0005, warmup_epochs=3.0, warmup_momentum=0.8, warmup_bias_lr=0.1, box=7.5, cls=0.5, cls_pw=1.0, obj=0.7, obj_pw=1.0, dfl=1.5, iou_t=0.2, anchor_t=5.0, fl_gamma=0.0, hsv_h=0.015, hsv_s=0.7, hsv_v=0.4, degrees=0.0, translate=0.1, scale=0.9, shear=0.0, perspective=0.0, flipud=0.0, fliplr=0.5, mosaic=1.0, mixup=0.15, copy_paste=0.3
 
                  from  n    params  module                                  arguments                     
   0                -1  1         0  models.common.Silence                   []                            
@@ -324,3 +371,16 @@ Starting training for 50 epochs...
       48/49        14G     0.9282     0.4242      1.151        369        640:  
 
       ```
+
+
+## Inference
+
+To run inference on a single image, use the following command:
+
+```bash
+python yolov9/detect_dual.py --source yolov9/data/sketch_images/valid/images/1EACABD4-EF65-46D0-82D3-F01EDCCA4992_png.rf.b6ff1482b613270be937c736f62be716.jpg --img 640 --device cpu --weights yolov9/runs/train/exp2/weights/best.pt --name gui_output
+```
+
+Image Result:
+
+!
