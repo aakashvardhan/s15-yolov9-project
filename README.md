@@ -370,7 +370,7 @@ Starting training for 50 epochs...
       Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
       48/49        14G     0.9282     0.4242      1.151        369        640:  
 
-      ```
+```
 
 
 ## Inference
